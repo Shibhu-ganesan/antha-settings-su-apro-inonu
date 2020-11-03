@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.container{
+text-align:center;
+}
+.row{
+margin:50px 0;
+}
+.column{
+margin: 10px;
+display: table-cell;
+text-align:center;
+padding:10px;
+width:30%;
+height:80%;
+vertical-align:middle;
+box-shadow: 0 0 10px black;
+color:white;
+}
+a{
+color:white;
+}
+a:hover{
+color:white;
+text-decoration:none;
+}
+</style>
+</head>
+<body>
+
+<nav style="text-align:center; z-index:1">
+    <img id="navimg" src="{% static 'images/Join.png' %}">
+   
+</nav>
+
+<div class="container">
+    <a href="{% url 'member_details' user.id%}" style="color: black;">Details</a>
+    <a href="{% url 'member_settings' user.id%}" style="color: black;">Settings</a>
+    <div class="row">
+      
+  <div class="column" style="background-color:#006400; padding:5%;  ">
+    <a href="{% url 'member_list' %}">Member List</a>
+    <p></p>
+  </div>
+  <div class="column" style="background-color:#f0e130; padding:5%;">
+    <a href="{% url 'startup_list' %}">Startup List</a>
+    <p></p>
+  </div>
+  <div class="column" style="background-color:#003153; padding:5%;">
+    <a href="{% url 'investor_list' %}">Investor List</a>
+    <p></p>
+  </div>
+</div>
+</div>
+
+</body>
+</html>
